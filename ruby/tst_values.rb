@@ -24,15 +24,52 @@ require 'pdq'
 Pdq.Init("OpenCenter")
 Pdq.SetComment("A simple M/M/1 queue")
 
-#---- Define the workload and circuit type ------------------------------------
+#------------------------------------------------------------------------------
 
-printf("pdq::DLY      -> '%s'\n", Pdq::DLY)
-printf("pdq::CEN      -> '%s'\n", Pdq::CEN)
-printf("pdq::FCFS     -> '%s'\n", Pdq::FCFS)
-printf("pdq::ISRV     -> '%s'\n", Pdq::ISRV)
-printf("pdq::TOL      -> '%s'\n", Pdq::TOL)
-printf("pdq::MAXBUF   -> '%s'\n", Pdq::MAXBUF)
+printf("pdq::DLY          -> '%s'\n", Pdq::DLY)
+printf("pdq::CEN          -> '%s'\n", Pdq::CEN)
+printf("pdq::FCFS         -> '%s'\n", Pdq::FCFS)
+printf("pdq::ISRV         -> '%s'\n", Pdq::ISRV)
+printf("pdq::TOL          -> '%s'\n", Pdq::TOL)
+printf("pdq::MAXBUF       -> '%s'\n", Pdq::MAXBUF)
 
-printf("pdq::MSQ      -> '%s'\n", Pdq::MSQ)
+printf("pdq::MSQ          -> '%s'\n", Pdq::MSQ)
+printf("pdq::TRUE         -> '%s'\n", Pdq::TRUE)
+printf("pdq::FALSE        -> '%s'\n", Pdq::FALSE)
+printf("pdq::MAXNODES     -> '%s'\n", Pdq::MAXNODES)
+printf("pdq::MAXSTREAMS   -> '%s'\n", Pdq::MAXSTREAMS)
 
 #------------------------------------------------------------------------------
+
+values = [
+	"TRUE",
+	"FALSE",
+	"MAXNODES",
+	"MAXBUF",
+	"MAXSTREAMS",
+	"MAXCHARS",
+	"VOID",
+	"OPEN",
+	"CLOSED",
+	"MEM",
+	"CEN",
+	"DLY",
+	"MSQ",
+	"ISRV",
+	"FCFS",
+	"PSHR",
+	"LCFS",
+	"TERM",
+	"TRANS",
+	"BATCH",
+	"EXACT",
+	"APPROX",
+	"CANON",
+	"VISITS",
+	"DEMAND",
+	"PDQ_SP",
+	"PDQ_MP",
+	"TOL"]
+  
+#------------------------------------------------------------------------------
+
