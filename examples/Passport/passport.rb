@@ -19,18 +19,21 @@
 #
 # Created by PLH on Thu, Apr 23, 2012
 
+require 'matrix'
 require 'pdq'
 
 "
 Solve traffic equations numerically using NumPy 
 
 # Traffic equations from PPA p.95:
+
 L0 = 15.36/3600    ... external arrival rate into system
 L1 = 0.3L0 + 0.1L3
 L2 = 0.7L0 + 0.2L1
 L3 = 0.8L1 + 0.9L2
 
 Rearrange terms to produce matrix form:
+
   1.0L0 + 0.0L1 + 0.0L2 + 0.0L3 = 15.36/3600
 - 0.3L0 + 1.0L1 - 0.1L2 + 0.0L3 = 0.0
 - 0.7L0 - 0.2L1 + 1.0L2 + 0.0L3 = 0.0
@@ -41,14 +44,26 @@ All diagonal coeffs should be 1.0
 
 # Don't need line continuation in arrays
 
-a = array([[ 1.0, 0.0, 0.0, 0.0], 
+a = Matrix[[ 1.0, 0.0, 0.0, 0.0], 
            [-0.3, 1.0,-0.1, 0.0],
            [-0.7,-0.2, 1.0, 0.0],
-           [ 0.0,-0.8,-0.9, 1.0]])
+           [ 0.0,-0.8,-0.9, 1.0]]
+
+ai = a.inverse
+
+printf("AI %s\n" , ai.inspect)
+
+m = ai * a
+
+printf("m %s \n", m.inspect)
 
 # RHS of the traffic eqns
 
-b = array([15.36/3600,0.0,0.0,0.0])
+b = Matrix[15.36/3600,0.0,0.0,0.0]
+
+c = ai * b
+
+print c.inspect
 
 # Solve the traffic eqns
 
@@ -101,8 +116,8 @@ r = array([L[0]*D[0], L[0]*D[1], L[0]*D[2], L[0]*D[3]])
 
 # Queue lengths
 
-print "U0: %6.2f\tQ0: %6.2f" % (r[0]*100, r[0] / (1 - r[0]))
-print "U1: %6.2f\tQ1: %6.2f" % (r[1]*100, r[1] / (1 - r[1]))
-print "U2: %6.2f\tQ2: %6.2f" % (r[2]*100, r[2] / (1 - r[2]))
-print "U3: %6.2f\tQ3: %6.2f" % (r[3]*100, r[3] / (1 - r[3]))
+printf("U0: %6.2f\tQ0: %6.2f\n", r[0]*100, r[0] / (1 - r[0]))
+printf("U1: %6.2f\tQ1: %6.2f\n", r[1]*100, r[1] / (1 - r[1]))
+printf("U2: %6.2f\tQ2: %6.2f\n", r[2]*100, r[2] / (1 - r[2]))
+printf("U3: %6.2f\tQ3: %6.2f\n", r[3]*100, r[3] / (1 - r[3]))
 

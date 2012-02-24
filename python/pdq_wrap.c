@@ -7024,10 +7024,10 @@ SWIG_init(void) {
   
   SWIG_InitializeModule(0);
   SWIG_InstallConstants(d,swig_const_table);
-  
-  
+
   PyDict_SetItemString(d,(char*)"cvar", SWIG_globals());
   SWIG_addvarlink(SWIG_globals(),(char*)"version",Swig_var_version_get, Swig_var_version_set);
+
   SWIG_Python_SetConstant(d, "TRUE",SWIG_From_int((int)(1)));
   SWIG_Python_SetConstant(d, "FALSE",SWIG_From_int((int)(0)));
   SWIG_Python_SetConstant(d, "MAXNODES",SWIG_From_int((int)(1024)));
@@ -7056,6 +7056,7 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "PDQ_SP",SWIG_From_int((int)(19)));
   SWIG_Python_SetConstant(d, "PDQ_MP",SWIG_From_int((int)(20)));
   SWIG_Python_SetConstant(d, "TOL",SWIG_From_double((double)(0.0010)));
+
   SWIG_addvarlink(SWIG_globals(),(char*)"nodes",Swig_var_nodes_get, Swig_var_nodes_set);
   SWIG_addvarlink(SWIG_globals(),(char*)"streams",Swig_var_streams_get, Swig_var_streams_set);
   SWIG_addvarlink(SWIG_globals(),(char*)"node",Swig_var_node_get, Swig_var_node_set);

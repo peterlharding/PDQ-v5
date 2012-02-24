@@ -6,6 +6,7 @@
 # This file is compatible with both classic and new-style classes.
 
 from sys import version_info
+
 if version_info >= (2,6,0):
     def swig_import_helper():
         from os.path import dirname
@@ -20,11 +21,14 @@ if version_info >= (2,6,0):
     del swig_import_helper
 else:
     import _pdq
+
 del version_info
+
 try:
     _swig_property = property
 except NameError:
     pass # Python < 2.2 doesn't have 'property'.
+
 def _swig_setattr_nondynamic(self,class_type,name,value,static=1):
     if (name == "thisown"): return self.this.own(value)
     if (name == "this"):
@@ -130,8 +134,10 @@ class SYSTAT_TYPE(_object):
         except: self.this = this
     __swig_destroy__ = _pdq.delete_SYSTAT_TYPE
     __del__ = lambda self : None;
+
 SYSTAT_TYPE_swigregister = _pdq.SYSTAT_TYPE_swigregister
 SYSTAT_TYPE_swigregister(SYSTAT_TYPE)
+
 cvar = _pdq.cvar
 
 class TERMINAL_TYPE(_object):
@@ -158,6 +164,7 @@ class TERMINAL_TYPE(_object):
         except: self.this = this
     __swig_destroy__ = _pdq.delete_TERMINAL_TYPE
     __del__ = lambda self : None;
+
 TERMINAL_TYPE_swigregister = _pdq.TERMINAL_TYPE_swigregister
 TERMINAL_TYPE_swigregister(TERMINAL_TYPE)
 
@@ -182,6 +189,7 @@ class BATCH_TYPE(_object):
         except: self.this = this
     __swig_destroy__ = _pdq.delete_BATCH_TYPE
     __del__ = lambda self : None;
+
 BATCH_TYPE_swigregister = _pdq.BATCH_TYPE_swigregister
 BATCH_TYPE_swigregister(BATCH_TYPE)
 
@@ -209,6 +217,7 @@ class TRANSACTION_TYPE(_object):
         except: self.this = this
     __swig_destroy__ = _pdq.delete_TRANSACTION_TYPE
     __del__ = lambda self : None;
+
 TRANSACTION_TYPE_swigregister = _pdq.TRANSACTION_TYPE_swigregister
 TRANSACTION_TYPE_swigregister(TRANSACTION_TYPE)
 
@@ -239,6 +248,7 @@ class JOB_TYPE(_object):
         except: self.this = this
     __swig_destroy__ = _pdq.delete_JOB_TYPE
     __del__ = lambda self : None;
+
 JOB_TYPE_swigregister = _pdq.JOB_TYPE_swigregister
 JOB_TYPE_swigregister(JOB_TYPE)
 
@@ -284,6 +294,7 @@ class NODE_TYPE(_object):
         except: self.this = this
     __swig_destroy__ = _pdq.delete_NODE_TYPE
     __del__ = lambda self : None;
+
 NODE_TYPE_swigregister = _pdq.NODE_TYPE_swigregister
 NODE_TYPE_swigregister(NODE_TYPE)
 
@@ -310,102 +321,127 @@ CreateNode = _pdq.CreateNode
 
 def CreateMultiNode(*args):
   return _pdq.CreateMultiNode(*args)
+
 CreateMultiNode = _pdq.CreateMultiNode
 
 def GetStreamsCount():
   return _pdq.GetStreamsCount()
+
 GetStreamsCount = _pdq.GetStreamsCount
 
 def GetNodesCount():
   return _pdq.GetNodesCount()
+
 GetNodesCount = _pdq.GetNodesCount
 
 def GetResponse(*args):
   return _pdq.GetResponse(*args)
+
 GetResponse = _pdq.GetResponse
 
 def GetResidenceTime(*args):
   return _pdq.GetResidenceTime(*args)
+
 GetResidenceTime = _pdq.GetResidenceTime
 
 def GetThruput(*args):
   return _pdq.GetThruput(*args)
+
 GetThruput = _pdq.GetThruput
 
 def GetLoadOpt(*args):
   return _pdq.GetLoadOpt(*args)
+
 GetLoadOpt = _pdq.GetLoadOpt
 
 def GetUtilization(*args):
   return _pdq.GetUtilization(*args)
+
 GetUtilization = _pdq.GetUtilization
 
 def GetQueueLength(*args):
   return _pdq.GetQueueLength(*args)
+
 GetQueueLength = _pdq.GetQueueLength
 
 def PDQ_GetThruMax(*args):
   return _pdq.PDQ_GetThruMax(*args)
+
 PDQ_GetThruMax = _pdq.PDQ_GetThruMax
 
 def Init(*args):
   return _pdq.Init(*args)
+
 Init = _pdq.Init
 
 def Report():
   return _pdq.Report()
+
 Report = _pdq.Report
 
 def SetDebug(*args):
   return _pdq.SetDebug(*args)
+
 SetDebug = _pdq.SetDebug
 
 def SetDemand(*args):
   return _pdq.SetDemand(*args)
+
 SetDemand = _pdq.SetDemand
 
 def SetDemand_p(*args):
   return _pdq.SetDemand_p(*args)
+
 SetDemand_p = _pdq.SetDemand_p
 
 def SetVisits(*args):
   return _pdq.SetVisits(*args)
+
 SetVisits = _pdq.SetVisits
 
 def SetVisits_p(*args):
   return _pdq.SetVisits_p(*args)
+
 SetVisits_p = _pdq.SetVisits_p
 
 def Solve(*args):
   return _pdq.Solve(*args)
+
 Solve = _pdq.Solve
 
 def SetWUnit(*args):
   return _pdq.SetWUnit(*args)
+
 SetWUnit = _pdq.SetWUnit
 
 def SetTUnit(*args):
   return _pdq.SetTUnit(*args)
+
 SetTUnit = _pdq.SetTUnit
 
 def SetComment(*args):
+
   return _pdq.SetComment(*args)
 SetComment = _pdq.SetComment
 
 def GetComment():
   return _pdq.GetComment()
+
 GetComment = _pdq.GetComment
 
 def PrintNodes():
   return _pdq.PrintNodes()
+
 PrintNodes = _pdq.PrintNodes
 
 def GetNode(*args):
   return _pdq.GetNode(*args)
+
 GetNode = _pdq.GetNode
 
 def getjob(*args):
   return _pdq.getjob(*args)
+
 getjob = _pdq.getjob
 
 
