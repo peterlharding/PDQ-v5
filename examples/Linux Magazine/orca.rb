@@ -38,7 +38,7 @@ crunchTime  = 10.0  # hours (very long service time)
 Pdq.Init("ORCA LA Model")
 
 s = Pdq.CreateOpen("Crunch", arrivalRate)
-n = Pdq.CreateNode("HPCnode", processors, Pdq.MSQ)
+n = Pdq.CreateNode("HPCnode", processors, Pdq::MSQ)
 
 Pdq.SetDemand("HPCnode", "Crunch", crunchTime)
 
@@ -46,7 +46,7 @@ Pdq.SetWUnit("Jobs")
 
 Pdq.SetTUnit("Hour")
 
-Pdq.Solve(Pdq.CANON)
+Pdq.Solve(Pdq::CANON)
 
 Pdq.Report()
 

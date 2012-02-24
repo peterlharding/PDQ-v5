@@ -15,7 +15,6 @@
 #  KIND, either express or implied.                                           #
 ###############################################################################
 #
-#
 # Created by NJG on Wed, Apr 18, 2007
 #
 # Queueing model of an email-spam analyzer system comprising a 
@@ -26,22 +25,22 @@
 # This simple M/M/4 model gave results that were in surprisingly 
 # good agreement with monitored queue lengths.
 #
-# $Id: spamcan1.py,v 1.2 2009/03/31 00:48:34 pfeller Exp $
-#-------------------------------------------------------------------------------
+# $Id: spamcan2.py,v 1.2 2009/03/31 00:48:34 pfeller Exp $
+#------------------------------------------------------------------------------
 
 require 'pdq'
 
 # Measured performance parameters 
 
 cpusPerServer = 4
-emailThruput  = 2376 # emails per hour
-scannerTime   = 6.0  # seconds per email
+emailThruput  = 678   # emails per hour
+scannerTime   = 12.0  # seconds per email
 
 Pdq.Init("Spam Farm Model")
 
 # Timebase is SECONDS ...
 
-nstreams = Pdq.CreateOpen("Email", emailThruput/3600.0)
+nstreams = Pdq.CreateOpen("Email", emailThruput/3600)
 nnodes   = Pdq.CreateNode("spamCan", cpusPerServer, Pdq::MSQ)
 
 Pdq.SetDemand("spamCan", "Email", scannerTime)
