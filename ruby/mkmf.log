@@ -1,0 +1,4 @@
+"swig -ruby -o pdq_wrap.c ../pdq.i"
+../lib/PDQ_Global.h:43: Warning(454): Setting a pointer/reference variable may leak memory.
+../lib/PDQ_Global.h:44: Warning(454): Setting a pointer/reference variable may leak memory.
+../lib/PDQ_Global.h:46: Warning(462): Unable to set variable of type char []
