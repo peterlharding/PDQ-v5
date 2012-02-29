@@ -37,6 +37,7 @@
 // This string gets read by GetVersion script amongst others
 // Do not modify order of fields
 // Must not contain more than 24 characters
+
 static char *version = "PDQ Analyzer v5.0 071209";
 
 //---- TYPES --------------------------------------------------------------
