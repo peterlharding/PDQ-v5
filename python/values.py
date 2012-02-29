@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 ###############################################################################
 #  Copyright (C) 1994 - 2009, Performance Dynamics Company                    #
 #                                                                             #
@@ -13,36 +14,18 @@
 #  KIND, either express or implied.                                           #
 ###############################################################################
 
-library(pdq)
+#
+#  $Id: test.py,v 4.5 2011/03/03 01:36:09 pfeller Exp $
+#
+#---------------------------------------------------------------------
 
-arrivRate    = 0.75
-service_time = 1.0
+# Prevent this program from loading pdq.py in this directory
 
-#---- Initialize --------------------------------------------------------------
+#---- Define globals -------------------------------------------------
 
-Init("OpenCircuit")
-SetComment("A simple M/M/1 queue")
+print "pdq.FCFS   = '%s'" % pdq.FCFS
+print "pdq.CEN    = '%s'" % pdq.CEN
+print "pdq.TRUE   = '%s'" % pdq.TRUE
+print "pdq.FALSE  = '%s'" % pdq.FALSE
 
-#---- Define the queueing center ----------------------------------------------
-
-CreateNode("server", CEN, FCFS)
-
-#---- Define the workload and circuit type ------------------------------------
-
-CreateOpen("work", arrivRate)
-
-SetWUnit("Customers")
-SetTUnit("Seconds")
-
-#---- Define service demand due to workload on the queueing center ------------
-
-SetDemand("server", "work", service_time)
-
-#---- Solve the model ---------------------------------------------------------
-#  Must use the CANONical method for an open circuit
-
-Solve(CANON)
-
-#---- Generate a report -------------------------------------------------------
-
-Report()
+#---------------------------------------------------------------------

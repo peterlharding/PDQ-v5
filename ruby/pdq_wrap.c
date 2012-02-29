@@ -5721,8 +5721,10 @@ SWIGEXPORT void Init_pdq(void) {
   }
   
   SWIG_RubyInitializeTrackings();
+
   rb_define_singleton_method(mPdq, "version", _wrap_version_get, 0);
   rb_define_singleton_method(mPdq, "version=", _wrap_version_set, 1);
+
   rb_define_const(mPdq, "TRUE", SWIG_From_int((int)(1)));
   rb_define_const(mPdq, "FALSE", SWIG_From_int((int)(0)));
   rb_define_const(mPdq, "MAXNODES", SWIG_From_int((int)(1024)));

@@ -8,4 +8,3 @@ $libs = "../lib/libpdq.a"
 
 create_makefile('pdq')
 
-
